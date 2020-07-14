@@ -1,5 +1,7 @@
 # This Dot Coding Exercise - Github User Search
 
+Deployed at [https://github-user-search.vercel.app/](https://github-user-search.vercel.app/)!
+
 ## Highlights
 
 - Using [Nrwl/Nx](https://github.com/nwrl/nx) CLI for following benefits
@@ -13,6 +15,7 @@
 - [Transloco](https://ngneat.github.io/transloco/) used as the I18n solution
   - Languages supported are English and Spanish (NOTE: the Spanish translations will be far from accurate)
 - [Spectator](https://github.com/ngneat/spectator) used for rapid unit test creation
+- Deployed via [Vercel](https://vercel.com/) for that JAMStack goodness!
 - Commitizen-friendly repo to ensure consistent commit message structure
   - Useful for tooling such as semantic-release
 - Husky
