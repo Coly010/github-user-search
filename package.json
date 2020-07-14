@@ -25,20 +25,24 @@
     "update": "ng update @nrwl/workspace",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "add-lib": "ts-node --project=tools/tsconfig.tools.json tools/scripts/add-lib/create-library.ts"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^9.1.0",
+    "@angular/cdk": "^9.2.4",
     "@angular/common": "^9.1.0",
     "@angular/compiler": "^9.1.0",
     "@angular/core": "^9.1.0",
     "@angular/forms": "^9.1.0",
+    "@angular/material": "^9.2.4",
     "@angular/platform-browser": "^9.1.0",
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "^9.1.0",
     "@ngneat/transloco": "^2.17.5",
     "@nrwl/angular": "9.5.1",
+    "angular-material-css-vars": "^1.0.0",
     "rxjs": "~6.5.4",
     "zone.js": "^0.10.2"
   },

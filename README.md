@@ -7,6 +7,9 @@
   - Cypress e2e testing out of the box
   - Jest unit testing out of the box
   - Prettier config for consistent code style across the team
+- [Angular Material](https://material.angular.io) used for UI Library
+  - Not only does it provide pre-created components matching Material Design
+  - It also provides some a11y benefits
 - [Transloco](https://ngneat.github.io/transloco/) used as the I18n solution
   - Languages supported are English and Spanish (NOTE: the Spanish translations will be far from accurate)
 - [Spectator](https://github.com/ngneat/spectator) used for rapid unit test creation

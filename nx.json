@@ -28,6 +28,9 @@
     "github-user-search-e2e": {
       "tags": [],
       "implicitDependencies": ["github-user-search"]
+    },
+    "github-user-search-ui-shell": {
+      "tags": ["type:ui"]
     }
   }
 }

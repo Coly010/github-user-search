@@ -1,9 +1,11 @@
+import { MaterialCssVarsModule } from 'angular-material-css-vars';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MaterialCssVarsModule],
       declarations: [AppComponent],
     }).compileComponents();
   }));

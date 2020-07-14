@@ -25,7 +25,10 @@
               "apps/github-user-search/src/favicon.ico",
               "apps/github-user-search/src/assets"
             ],
-            "styles": ["apps/github-user-search/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "apps/github-user-search/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -124,6 +127,41 @@
               "!apps/github-user-search-e2e/**/*"
             ]
           }
+        }
+      }
+    },
+    "github-user-search-ui-shell": {
+      "projectType": "library",
+      "root": "libs/github-user-search/ui-shell",
+      "sourceRoot": "libs/github-user-search/ui-shell/src",
+      "prefix": "cfe",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/github-user-search/ui-shell/tsconfig.lib.json",
+              "libs/github-user-search/ui-shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/github-user-search/ui-shell/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/github-user-search/ui-shell/jest.config.js",
+            "tsConfig": "libs/github-user-search/ui-shell/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/github-user-search/ui-shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }
