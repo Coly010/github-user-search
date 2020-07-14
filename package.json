@@ -48,6 +48,7 @@
     "@angular/language-service": "^9.1.0",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "@ngneat/spectator": "^5.12.0",
     "@nrwl/cypress": "9.5.1",
     "@nrwl/jest": "9.5.1",
     "@nrwl/workspace": "9.5.1",
