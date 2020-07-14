@@ -7,6 +7,8 @@
   - Cypress e2e testing out of the box
   - Jest unit testing out of the box
   - Prettier config for consistent code style across the team
+- [Transloco](https://ngneat.github.io/transloco/) used as the I18n solution
+  - Languages supported are English and Spanish (NOTE: the Spanish translations will be far from accurate)
 - [Spectator](https://github.com/ngneat/spectator) used for rapid unit test creation
 - Commitizen-friendly repo to ensure consistent commit message structure
   - Useful for tooling such as semantic-release
