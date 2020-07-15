@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'github-user-search';
 
   constructor(private readonly materialCssVarsService: MaterialCssVarsService) {
-    this.materialCssVarsService.setPrimaryColor('#fa7268');
-    this.materialCssVarsService.setAccentColor('#68f0fa');
+    this.materialCssVarsService.setPrimaryColor('#5b3475');
+    this.materialCssVarsService.setAccentColor('#4e7534');
   }
 }

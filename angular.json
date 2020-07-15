@@ -164,6 +164,41 @@
           "style": "scss"
         }
       }
+    },
+    "github-user-search-feature-search": {
+      "projectType": "library",
+      "root": "libs/github-user-search/feature-search",
+      "sourceRoot": "libs/github-user-search/feature-search/src",
+      "prefix": "cfe",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/github-user-search/feature-search/tsconfig.lib.json",
+              "libs/github-user-search/feature-search/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/github-user-search/feature-search/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/github-user-search/feature-search/jest.config.js",
+            "tsConfig": "libs/github-user-search/feature-search/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/github-user-search/feature-search/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

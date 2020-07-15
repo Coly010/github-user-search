@@ -1,3 +1,4 @@
 {
-  "appName": "Github User Search"
+  "appName": "Github User Search",
+  "appFooter": "Utilising Angular Material, GraphQL, NgRx and other awesome libraries!"
 }

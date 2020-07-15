@@ -31,6 +31,9 @@
     },
     "github-user-search-ui-shell": {
       "tags": ["type:ui"]
+    },
+    "github-user-search-feature-search": {
+      "tags": ["type:feature"]
     }
   }
 }

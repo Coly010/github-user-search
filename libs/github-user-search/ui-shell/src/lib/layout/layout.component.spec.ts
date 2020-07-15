@@ -1,24 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslocoModule } from '@ngneat/transloco';
+import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
 
 import { LayoutComponent } from './layout.component';
 
 describe('LayoutComponent', () => {
-  let component: LayoutComponent;
-  let fixture: ComponentFixture<LayoutComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [LayoutComponent],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(LayoutComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  let spectator: Spectator<LayoutComponent>;
+  const createComponent = createComponentFactory({
+    component: LayoutComponent,
+    imports: [TranslocoModule],
+    shallow: true,
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  beforeEach(() => (spectator = createComponent()));
+
+  it('should create the component', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

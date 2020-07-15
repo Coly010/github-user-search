@@ -18,6 +18,9 @@
     "paths": {
       "@cfe/github-user-search/ui-shell": [
         "libs/github-user-search/ui-shell/src/index.ts"
+      ],
+      "@cfe/github-user-search/feature-search": [
+        "libs/github-user-search/feature-search/src/index.ts"
       ]
     }
   },

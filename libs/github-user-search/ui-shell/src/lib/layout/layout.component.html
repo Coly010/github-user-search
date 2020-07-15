@@ -1,7 +1,23 @@
 <ng-container *transloco="let t">
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      {{ t('appName') }}
-    </mat-toolbar-row>
-  </mat-toolbar>
+  <div class="page">
+    <mat-toolbar color="primary" role="heading">
+      <mat-toolbar-row>
+        {{ t('appName') }}
+        <div class="spacer"></div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="page__content">
+      <br />
+      <ng-content></ng-content>
+    </div>
+
+    <div class="footer">
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <p>{{ t('appFooter') }}</p>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+  </div>
 </ng-container>

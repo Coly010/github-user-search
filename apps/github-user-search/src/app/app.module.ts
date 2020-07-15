@@ -8,6 +8,7 @@ import { GithubUserSearchUiShellModule } from '@cfe/github-user-search/ui-shell'
 
 import { TranslocoRootModule } from './transloco-root.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { AppComponent } from './app.component';
       lightThemeClass: 'isLightTheme',
     }),
     GithubUserSearchUiShellModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
