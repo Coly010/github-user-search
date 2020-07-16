@@ -1,5 +1,5 @@
 import { search } from './../+state/actions/search.actions';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
   selector: 'cfe-user-search',
   templateUrl: './user-search.component.html',
   styleUrls: ['./user-search.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserSearchComponent implements OnInit {
   searchForm: FormGroup;
