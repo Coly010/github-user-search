@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const fs = require('fs');
 
 const githubAccessToken = process.env.GITHUB_ACCESS_TOKEN;
