@@ -1,6 +1,7 @@
 # This Dot Coding Exercise - Github User Search
 
 Deployed at [https://github-user-search.vercel.app/](https://github-user-search.vercel.app/)!
+**NOTE**: Please set an OAuth Github Token in the `.env` file before running the app
 
 ## Highlights
 

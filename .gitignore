@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 apps/github-user-search/src/config.json
+.env
