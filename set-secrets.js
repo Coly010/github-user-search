@@ -1,5 +1,8 @@
-import fs from 'fs';
-const githubAccessToken = process.env.GithubAccessToken;
+require('dotenv').config();
+
+const fs = require('fs');
+
+const githubAccessToken = process.env.GITHUB_ACCESS_TOKEN;
 
 const githubUserSearchConfig = {
   githubAccessToken,
