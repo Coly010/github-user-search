@@ -3,16 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     loadChildren: () =>
       import('@cfe/github-user-search/feature-search').then(
         (m) => m.GithubUserSearchFeatureSearchModule
       ),
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
   },
 ];
 

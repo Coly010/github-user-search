@@ -13,10 +13,18 @@
             t('form.required')
           }}</mat-error>
         </mat-form-field>
-        <button mat-flat-button color="accent" type="submit">
+        <button
+          mat-flat-button
+          color="accent"
+          type="submit"
+          [disabled]="searchForm.invalid"
+        >
           {{ t('form.searchBtn') }}
         </button>
       </form>
     </div>
+  </div>
+  <div class="search-results">
+    <router-outlet></router-outlet>
   </div>
 </ng-container>
