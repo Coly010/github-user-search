@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 import { MaterialCssVarsModule } from 'angular-material-css-vars';
 
 import { GithubUserSearchUiShellModule } from '@cfe/github-user-search/ui-shell';
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './app.routing.module';
     }),
     GithubUserSearchUiShellModule,
     AppRoutingModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],

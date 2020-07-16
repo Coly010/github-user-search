@@ -12,6 +12,7 @@ Deployed at [https://github-user-search.vercel.app/](https://github-user-search.
 - [Angular Material](https://material.angular.io) used for UI Library
   - Not only does it provide pre-created components matching Material Design
   - It also provides some a11y benefits
+- [NgRx](https://ngrx.io/) is used as the state management solution
 - [Transloco](https://ngneat.github.io/transloco/) used as the I18n solution
   - Languages supported are English and Spanish (NOTE: the Spanish translations will be far from accurate)
 - [Spectator](https://github.com/ngneat/spectator) used for rapid unit test creation
