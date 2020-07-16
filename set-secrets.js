@@ -1,5 +1,9 @@
 const fs = require('fs');
 
+if (process.env.DEPLOY !== 'vercel') {
+  require('dotenv').config();
+}
+
 const githubAccessToken = process.env.GITHUB_ACCESS_TOKEN;
 
 const githubUserSearchConfig = {

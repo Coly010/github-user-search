@@ -31,6 +31,17 @@ Deployed at [https://github-user-search.vercel.app/](https://github-user-search.
   - It hooks into certain events and runs custom scripts
   - In this project, it is used to ensure commit message consistency, check for any linting errors and format staged files
 
+## Deploying on Vercel Notes
+
+We need two environment variables to be set when deploying to Vercel:
+
+```
+DEPLOY='vercel'
+GITHUB_ACCESS_TOKEN='your token here'
+```
+
+Vercel makes it easy to manage the environment variables that are set when deploying the project on their project settings page.
+
 ## Development server
 
 Run `ng serve github-user-search` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.

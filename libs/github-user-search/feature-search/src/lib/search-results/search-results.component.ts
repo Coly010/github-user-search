@@ -4,11 +4,49 @@ import { Subscription } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
-const CurrentUserForProfile = gql`
-  query CurrentUserForProfile {
-    currentUser {
-      login
-      avatar_url
+export const SEARCH_USERS_QUERY = gql`
+  query searchUsers($searchVal: String!, $afterCursor: String) {
+    search(type: USER, query: $searchVal, first: 10, after: $afterCursor) {
+      userCount
+      pageInfo {
+        startCursor
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          ... on User {
+            id
+            login
+            name
+            url
+            email
+            bio
+            location
+            avatarUrl
+            createdAt
+            followers {
+              totalCount
+            }
+            repositories {
+              totalCount
+            }
+            starredRepositories {
+              totalCount
+            }
+          }
+          ... on Organization {
+            id
+            login
+            name
+            url
+            avatarUrl
+            repositories {
+              totalCount
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -28,7 +66,11 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
     this.querySubscription = this.apollo
       .watchQuery<any>({
-        query: CurrentUserForProfile,
+        query: SEARCH_USERS_QUERY,
+        variables: {
+          searchVal: 'Coly010',
+          afterCursor: null,
+        },
       })
       .valueChanges.subscribe(({ data, loading }) => {
         this.currentUser = data.currentUser;
