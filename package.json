@@ -6,8 +6,9 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "nx",
+    "prestart": "npm run set-secrets",
     "start": "ng serve",
-    "prebuild": "node set-secrets.js",
+    "prebuild": "npm run set-secrets",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
@@ -27,7 +28,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "add-lib": "ts-node --project=tools/tsconfig.tools.json tools/scripts/add-lib/create-library.ts"
+    "add-lib": "ts-node --project=tools/tsconfig.tools.json tools/scripts/add-lib/create-library.ts",
+    "set-secrets": "node set-secrets.js"
   },
   "private": true,
   "dependencies": {
