@@ -1,4 +1,12 @@
 {
   "appName": "Github User Search",
-  "appFooter": "Utilising Angular Material, GraphQL, NgRx and other awesome libraries!"
+  "appFooter": "Utilising Angular Material, GraphQL, NgRx and other awesome libraries!",
+  "userSearch": {
+    "tagline": "Search for users on GitHub",
+    "form": {
+      "searchLabel": "Search GitHub users",
+      "searchBtn": "Search",
+      "required": "You must enter a term to search"
+    }
+  }
 }

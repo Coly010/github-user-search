@@ -1,1 +1,22 @@
-<p>user-search works!</p>
+<ng-container *transloco="let t; read: 'userSearch'">
+  <div class="user-search">
+    <div class="tagline">
+      <h1><mat-icon aria-hidden="true">search</mat-icon>{{ t('tagline') }}</h1>
+    </div>
+
+    <div class="search__form">
+      <form [formGroup]="searchForm" (submit)="search()">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ t('form.searchLabel') }}</mat-label>
+          <input matInput formControlName="searchTerm" class="search__input" />
+          <mat-error *ngIf="searchForm.invalid">{{
+            t('form.required')
+          }}</mat-error>
+        </mat-form-field>
+        <button mat-flat-button color="accent" type="submit">
+          {{ t('form.searchBtn') }}
+        </button>
+      </form>
+    </div>
+  </div>
+</ng-container>

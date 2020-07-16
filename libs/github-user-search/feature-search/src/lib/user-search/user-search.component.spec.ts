@@ -1,24 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
+import { TranslocoModule } from '@ngneat/transloco';
 
 import { UserSearchComponent } from './user-search.component';
 
 describe('UserSearchComponent', () => {
-  let component: UserSearchComponent;
-  let fixture: ComponentFixture<UserSearchComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [UserSearchComponent],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(UserSearchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  let spectator: Spectator<UserSearchComponent>;
+  const createComponent = createComponentFactory({
+    component: UserSearchComponent,
+    imports: [TranslocoModule],
+    shallow: true,
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  beforeEach(() => (spectator = createComponent()));
+
+  it('should create the component', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });
