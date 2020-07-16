@@ -2,13 +2,20 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as SearchActions from './../actions/search.actions';
-import { tap } from 'rxjs/operators';
+import { tap, map, mergeMap } from 'rxjs/operators';
+import {
+  ROUTER_NAVIGATED,
+  RouterNavigatedPayload,
+  RouterNavigatedAction,
+} from '@ngrx/router-store';
+import { SearchUsersGQL } from '../graphql/search-users.graphql';
 
 @Injectable()
 export class SearchEffects {
   constructor(
     private readonly actions$: Actions,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly searchUsersGQL: SearchUsersGQL
   ) {}
 
   loadSearchResults$ = createEffect(
@@ -20,5 +27,27 @@ export class SearchEffects {
         })
       ),
     { dispatch: false }
+  );
+
+  fetchSearchResults$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ROUTER_NAVIGATED),
+      mergeMap(({ payload }: RouterNavigatedAction) => {
+        const url = payload.event.url;
+        const term = url.includes('/search/') ? url.split('/search/')[1] : '';
+
+        return this.searchUsersGQL
+          .fetch({
+            searchVal: term,
+            afterCursor: null,
+          })
+          .pipe(
+            tap(({ data, loading }) => {
+              console.log(`test`, data);
+            })
+          );
+      }),
+      map(({ data }) => SearchActions.searchResults({ searchResults: data }))
+    )
   );
 }

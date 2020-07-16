@@ -1,23 +1,28 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { search } from './../actions/search.actions';
+import * as fromSearch from './../actions/search.actions';
+import { SearchUsersResponse } from '../graphql/search-users.graphql';
 
 export const searchFeatureKey = 'search';
 
-export interface State {
+export interface UserSearchState {
   searchTerm: string;
-  searchResults: any[];
+  searchResults: SearchUsersResponse;
 }
 
-export const initialState: State = {
+export const initialState: UserSearchState = {
   searchTerm: '',
-  searchResults: [],
+  searchResults: null,
 };
 
 const searchReducer = createReducer(
   initialState,
-  on(search, (state, { searchTerm }) => ({ ...state, searchTerm }))
+  on(fromSearch.search, (state, { searchTerm }) => ({ ...state, searchTerm })),
+  on(fromSearch.searchResults, (state, { searchResults }) => ({
+    ...state,
+    searchResults,
+  }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: UserSearchState | undefined, action: Action) {
   return searchReducer(state, action);
 }
