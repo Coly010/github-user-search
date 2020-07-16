@@ -15,16 +15,9 @@ describe('AppComponent', () => {
       GithubUserSearchUiShellModule,
     ],
   });
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [MaterialCssVarsModule],
-      declarations: [AppComponent],
-    }).compileComponents();
-  }));
+  beforeEach(() => (spectator = createComponent()));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(spectator.component).toBeTruthy();
   });
 });
