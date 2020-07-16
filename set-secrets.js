@@ -6,6 +6,6 @@ const githubUserSearchConfig = {
 };
 
 fs.writeFileSync(
-  'apps/github-user-search/src/app/config.json',
+  'apps/github-user-search/src/config.json',
   JSON.stringify(githubUserSearchConfig)
 );

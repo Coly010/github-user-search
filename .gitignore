@@ -37,3 +37,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+apps/github-user-search/src/config.json
