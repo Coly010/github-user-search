@@ -13,6 +13,7 @@ import { TranslocoRootModule } from './transloco-root.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { metaReducers } from './reducers/app.reducers';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { metaReducers } from './reducers/app.reducers';
     ),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot(),
+    GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
