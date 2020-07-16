@@ -34,8 +34,8 @@ export interface SearchUsersResponse {
 })
 export class SearchUsersGQL extends Query<SearchUsersResponse> {
   document = gql`
-    query searchUsers($searchVal: String!, $afterCursor: String) {
-      search(type: USER, query: $searchVal, first: 10, after: $afterCursor) {
+    query searchUsers($searchTerm: String!, $afterCursor: String) {
+      search(type: USER, query: $searchTerm, first: 10, after: $afterCursor) {
         userCount
         pageInfo {
           startCursor

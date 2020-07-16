@@ -36,16 +36,10 @@ export class SearchEffects {
         const url = payload.event.url;
         const term = url.includes('/search/') ? url.split('/search/')[1] : '';
 
-        return this.searchUsersGQL
-          .fetch({
-            searchVal: term,
-            afterCursor: null,
-          })
-          .pipe(
-            tap(({ data, loading }) => {
-              console.log(`test`, data);
-            })
-          );
+        return this.searchUsersGQL.fetch({
+          searchTerm: term,
+          afterCursor: null,
+        });
       }),
       map(({ data }) => SearchActions.searchResults({ searchResults: data }))
     )
