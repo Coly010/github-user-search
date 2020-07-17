@@ -35,8 +35,14 @@ export class SearchResultsComponent implements OnInit {
     return item.id;
   }
 
-  updatePage({ pageSize }: PageEvent) {
-    this.store.dispatch(fromSearch.pageSize({ pageSize }));
+  updatePage({ pageSize, pageIndex, previousPageIndex }: PageEvent) {
+    console.log(`update Page`, pageSize, pageIndex, previousPageIndex);
+    if (pageIndex !== previousPageIndex) {
+      const direction = pageIndex > previousPageIndex ? 'next' : 'prev';
+      this.store.dispatch(fromSearch.pageChanged({ direction }));
+    } else {
+      this.store.dispatch(fromSearch.pageSize({ pageSize }));
+    }
     this.store.dispatch(fromSearch.resultsLoading({ resultsLoading: true }));
   }
 }

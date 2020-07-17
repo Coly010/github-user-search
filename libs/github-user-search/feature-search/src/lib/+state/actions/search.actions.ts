@@ -20,3 +20,8 @@ export const pageSize = createAction(
   '[Pagination] Update Page Size',
   props<{ pageSize: number }>()
 );
+
+export const pageChanged = createAction(
+  '[Pagination] Update Page Direction',
+  props<{ direction: 'prev' | 'next' }>()
+);

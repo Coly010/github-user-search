@@ -22,3 +22,14 @@ export const selectPageSize = createSelector(
   selectUserSearchFeature,
   (state: UserSearchState) => state.pageSize
 );
+
+export const selectSearchResultsAndPageInfo = createSelector(
+  selectSearchTerm,
+  selectSearchResults,
+  selectPageSize,
+  (searchTerm, searchResults, pageSize) => ({
+    searchTerm,
+    searchResults,
+    pageSize,
+  })
+);

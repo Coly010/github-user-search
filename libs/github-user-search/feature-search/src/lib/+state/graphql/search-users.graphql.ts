@@ -37,13 +37,17 @@ export class SearchUsersGQL extends Query<SearchUsersResponse> {
     query searchUsers(
       $searchTerm: String!
       $afterCursor: String
+      $beforeCursor: String
+      $last: Int
       $first: Int = 10
     ) {
       search(
         type: USER
         query: $searchTerm
         first: $first
+        last: $last
         after: $afterCursor
+        before: $beforeCursor
       ) {
         userCount
         pageInfo {
