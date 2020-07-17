@@ -1,5 +1,6 @@
-<p>search-results works!</p>
-
-<pre>
-  {{ searchResults$ | async | json }}
-</pre>
+<div
+  class="search-results"
+  *ngFor="let edge of (searchResults$ | async).search.edges; trackBy: trackByFn"
+>
+  <cfe-user-card [user]="edge.node"></cfe-user-card>
+</div>

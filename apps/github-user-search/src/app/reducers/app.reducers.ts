@@ -10,6 +10,8 @@ export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
     console.log('state', state);
     console.log('action', action);
 
+    console.log(environment.production);
+
     return reducer(state, action);
   };
 }

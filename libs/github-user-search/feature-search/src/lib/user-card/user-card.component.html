@@ -1,0 +1,31 @@
+<ng-container *transloco="let t; read: 'userCard'">
+  <a [href]="'https://github.com/' + user.login" target="_blank">
+    <mat-card class="user-card">
+      <mat-card-header>
+        <div
+          mat-card-avatar
+          [style.backgroundImage]="'url(' + user.avatarUrl + ')'"
+        ></div>
+        <mat-card-title>{{ user.login }}</mat-card-title>
+        <mat-card-subtitle>{{ user.name }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ isOrg ? user.bio : user.description }}</p>
+        <mat-list class="user-info" *ngIf="!isOrg">
+          <mat-list-item>
+            <mat-icon matListIcon>people</mat-icon>
+            {{ user.followers.totalCount }} {{ t('followers') }}
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>star</mat-icon>
+            {{ user.starredRepositories.totalCount }} {{ t('stars') }}
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>code</mat-icon>
+            {{ user.repositories.totalCount }} {{ t('repos') }}
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </a>
+</ng-container>

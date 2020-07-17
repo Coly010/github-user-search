@@ -16,6 +16,7 @@ $config: mat-typography-config();
     @extend .spacer;
     max-height: calc(100vh - 128px);
     overflow-y: auto;
+    background: var(--page-background);
 
     &:before {
       content: ' ';

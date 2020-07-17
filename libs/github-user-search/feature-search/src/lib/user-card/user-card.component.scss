@@ -1,0 +1,50 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+@import '~bootstrap/scss/mixins/breakpoints';
+
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-card {
+  margin: 0.5rem auto;
+
+  div[mat-card-avatar] {
+    background-size: cover;
+  }
+
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+  }
+}
+
+// Unstyle anchor tags to allow a11y to pick up that card is a link
+// but without affecting it visually
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  width: 50%;
+  @include media-breakpoint-down(md) {
+    width: 80%;
+  }
+
+  display: block;
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}

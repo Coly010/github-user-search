@@ -1,3 +1,4 @@
+import { GitHubUser } from './../+models/github-user.model';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -16,5 +17,9 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchResults$ = this.store.pipe(select(selectSearchResults));
+  }
+
+  trackByFn(item: GitHubUser, index: number) {
+    return item.id;
   }
 }

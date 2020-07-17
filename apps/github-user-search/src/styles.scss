@@ -4,12 +4,12 @@
 $mat-css-dark-theme-selector: '.isDarkTheme';
 $mat-css-light-theme-selector: '.isLightTheme';
 
-.isDarkTheme {
-  --page-background: #313131;
+:root {
+  --page-background: #fafafa;
 }
 
-.isLightTheme {
-  --page-background: #ebebeb;
+.isDarkTheme {
+  --page-background: #313131;
 }
 
 // init theme

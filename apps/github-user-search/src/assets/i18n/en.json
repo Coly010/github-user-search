@@ -8,5 +8,10 @@
       "searchBtn": "Search",
       "required": "You must enter a term to search"
     }
+  },
+  "userCard": {
+    "followers": "Followers",
+    "stars": "Stars",
+    "repos": "Repositories"
   }
 }

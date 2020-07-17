@@ -8,6 +8,16 @@ $grid-breakpoints: (
 
 @import '~bootstrap/scss/mixins/breakpoints';
 
+.fixed-container {
+  width: 98vw;
+  position: fixed;
+  z-index: 10002;
+  background: var(--page-background);
+  left: 1vw;
+  transform: translateY(-20px);
+  padding-bottom: 4px;
+}
+
 .user-search {
   display: flex;
   flex-direction: column;
@@ -56,4 +66,8 @@ $grid-breakpoints: (
       }
     }
   }
+}
+
+.search-results {
+  margin-top: 164px;
 }

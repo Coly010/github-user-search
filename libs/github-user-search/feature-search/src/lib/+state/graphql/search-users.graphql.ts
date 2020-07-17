@@ -51,9 +51,7 @@ export class SearchUsersGQL extends Query<SearchUsersResponse> {
               url
               email
               bio
-              location
               avatarUrl
-              createdAt
               followers {
                 totalCount
               }
@@ -68,11 +66,9 @@ export class SearchUsersGQL extends Query<SearchUsersResponse> {
               id
               login
               name
+              description
               url
               avatarUrl
-              repositories {
-                totalCount
-              }
             }
           }
         }
