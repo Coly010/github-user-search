@@ -7,7 +7,9 @@
       "searchLabel": "Buscar usuarios de GitHub",
       "searchBtn": "Buscar",
       "required": "Debes ingresar un término para buscar"
-    }
+    },
+    "noResults": "No pudimos encontrar ningún usuario que coincida con su término de búsqueda. Inténtalo de nuevo.",
+    "loading": "Obteniendo usuarios"
   },
   "userCard": {
     "followers": "Seguidores",

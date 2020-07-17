@@ -1,21 +1,7 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  Input,
-} from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { PageEvent } from '@angular/material/paginator';
-import { Observable } from 'rxjs';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { GitHubUser } from './../+models/github-user.model';
-import {
-  selectSearchResults,
-  selectPageSize,
-  selectResultsLoading,
-} from './../+state/selectors/search.selectors';
-import { SearchUsersResponse } from '../+state/graphql/search-users.graphql';
 
-import * as fromSearch from '../+state/actions/search.actions';
+import { SearchUsersResponse } from '../+state/graphql/search-users.graphql';
 
 @Component({
   selector: 'cfe-search-results',
@@ -23,12 +9,11 @@ import * as fromSearch from '../+state/actions/search.actions';
   styleUrls: ['./search-results.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent {
   @Input() searchResults: SearchUsersResponse;
+  @Input() isLoading: boolean;
 
-  constructor(private readonly store: Store) {}
-
-  ngOnInit(): void {}
+  constructor() {}
 
   trackByFn(item: GitHubUser, index: number) {
     return item.id;

@@ -1,9 +1,10 @@
 import { GithubOrg } from './../+models/github-org.model';
 import {
   Component,
-  OnInit,
   ChangeDetectionStrategy,
   Input,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core';
 import { GitHubUser } from '../+models/github-user.model';
 
@@ -13,14 +14,16 @@ import { GitHubUser } from '../+models/github-user.model';
   styleUrls: ['./user-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserCardComponent implements OnInit {
+export class UserCardComponent implements OnChanges {
   @Input() user: GitHubUser & GithubOrg;
 
   isOrg: boolean;
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.isOrg = !(this.user as GitHubUser).followers;
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.user) {
+      this.isOrg = !(this.user as GitHubUser).followers;
+    }
   }
 }

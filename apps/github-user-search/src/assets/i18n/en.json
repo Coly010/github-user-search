@@ -7,7 +7,9 @@
       "searchLabel": "Search GitHub users",
       "searchBtn": "Search",
       "required": "You must enter a term to search"
-    }
+    },
+    "noResults": "We couldn't find any users matching your search term. Please try again.",
+    "loading": "Fetching users"
   },
   "userCard": {
     "followers": "Followers",

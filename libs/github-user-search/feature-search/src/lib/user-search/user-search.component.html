@@ -51,6 +51,7 @@
     <div class="search-results">
       <cfe-search-results
         [searchResults]="searchResults$ | async"
+        [isLoading]="resultsLoading$ | async"
       ></cfe-search-results>
     </div>
   </div>

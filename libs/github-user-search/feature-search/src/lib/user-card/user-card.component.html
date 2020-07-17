@@ -11,18 +11,18 @@
       </mat-card-header>
       <mat-card-content>
         <p>{{ isOrg ? user.bio : user.description }}</p>
-        <mat-list class="user-info" *ngIf="!isOrg">
-          <mat-list-item>
+        <mat-list class="user-info">
+          <mat-list-item *ngIf="!isOrg">
             <mat-icon matListIcon>people</mat-icon>
-            {{ user.followers.totalCount | number }} {{ t('followers') }}
+            {{ user.followers?.totalCount | number }} {{ t('followers') }}
           </mat-list-item>
-          <mat-list-item>
+          <mat-list-item *ngIf="!isOrg">
             <mat-icon matListIcon>star</mat-icon>
-            {{ user.starredRepositories.totalCount | number }} {{ t('stars') }}
+            {{ user.starredRepositories?.totalCount | number }} {{ t('stars') }}
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>code</mat-icon>
-            {{ user.repositories.totalCount | number }} {{ t('repos') }}
+            {{ user.repositories?.totalCount | number }} {{ t('repos') }}
           </mat-list-item>
         </mat-list>
       </mat-card-content>

@@ -1,5 +1,19 @@
 <div class="search-results">
-  <div *ngFor="let edge of searchResults.search.edges; trackBy: trackByFn">
-    <cfe-user-card [user]="edge.node"></cfe-user-card>
-  </div>
+  <ng-container
+    *ngIf="
+      searchResults && searchResults.search.edges.length > 0;
+      else noSearchResults
+    "
+  >
+    <div *ngFor="let edge of searchResults?.search.edges; trackBy: trackByFn">
+      <cfe-user-card [user]="edge.node"></cfe-user-card>
+    </div>
+  </ng-container>
+  <ng-template #noSearchResults>
+    <ng-container *transloco="let t; read: 'userSearch'">
+      <h3 class="no-results-info">
+        {{ isLoading ? t('loading') : t('noResults') }}
+      </h3>
+    </ng-container>
+  </ng-template>
 </div>
