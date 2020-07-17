@@ -16,6 +16,9 @@
   },
   "localeDropdown": {
     "en": "English",
-    "es": "Español"
+    "es": "Español",
+    "aria": {
+      "label": "Cambia el idioma"
+    }
   }
 }
