@@ -32,23 +32,26 @@
       </div>
     </div>
   </div>
-  <mat-progress-bar
-    class="loading-bar"
-    mode="query"
-    color="accent"
-    *ngIf="resultsLoading$ | async"
-  ></mat-progress-bar>
-  <mat-paginator
-    [length]="(searchResults$ | async)?.search.userCount"
-    [pageSize]="pageSize$ | async"
-    [pageSizeOptions]="pageSizeOptions"
-    (page)="updatePage($event)"
-  ></mat-paginator>
 
-  <div class="search-results">
-    <cfe-search-results
-      *ngIf="formSubmitted"
-      [searchResults]="searchResults$ | async"
-    ></cfe-search-results>
+  <div class="search-content" *ngIf="formSubmitted">
+    <mat-progress-bar
+      class="loading-bar"
+      mode="query"
+      color="accent"
+      *ngIf="resultsLoading$ | async"
+    ></mat-progress-bar>
+
+    <mat-paginator
+      [length]="(searchResults$ | async)?.search.userCount"
+      [pageSize]="pageSize$ | async"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="updatePage($event)"
+    ></mat-paginator>
+
+    <div class="search-results">
+      <cfe-search-results
+        [searchResults]="searchResults$ | async"
+      ></cfe-search-results>
+    </div>
   </div>
 </ng-container>

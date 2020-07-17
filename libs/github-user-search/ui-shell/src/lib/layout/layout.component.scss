@@ -45,6 +45,10 @@ $config: mat-typography-config();
   }
 
   .footer {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+
     mat-toolbar-row {
       font-size: mat-font-size($config, caption);
 

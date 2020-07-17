@@ -16,10 +16,12 @@ $config: mat-typography-config();
 }
 
 .menu-trigger {
+  display: flex;
   border-color: var(--page-background);
 
   mat-icon {
     font-weight: 300;
+    margin: auto 0.25rem;
   }
 }
 

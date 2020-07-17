@@ -1,3 +1,4 @@
+import { matPaginatorIntlFactory } from './paginator.i18n';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,9 +9,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import {
+  MatPaginatorModule,
+  MatPaginatorIntl,
+} from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { TranslocoModule } from '@ngneat/transloco';
+import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { UserSearchComponent } from './user-search/user-search.component';
@@ -48,6 +52,13 @@ const routes: Routes = [
     UserSearchComponent,
     SearchResultsComponent,
     UserCardComponent,
+  ],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useFactory: matPaginatorIntlFactory,
+      deps: [TranslocoService],
+    },
   ],
 })
 export class GithubUserSearchFeatureSearchModule {}

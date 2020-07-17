@@ -21,6 +21,26 @@ $config: mat-typography-config();
   padding-bottom: 4px;
 }
 
+.search-content {
+  position: relative;
+  margin-top: 164px;
+  padding-bottom: 56px;
+
+  mat-paginator {
+    position: fixed;
+    bottom: 64px;
+    left: 1rem;
+    right: 1rem;
+    z-index: 999;
+
+    @include media-breakpoint-down(sm) {
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
 .user-search {
   display: flex;
   flex-direction: column;
@@ -74,7 +94,6 @@ $config: mat-typography-config();
 }
 
 .search-results {
-  margin-top: 164px;
   @include media-breakpoint-down(md) {
     margin-top: 0px;
   }

@@ -20,5 +20,14 @@
     "aria": {
       "label": "Change the language"
     }
+  },
+  "paginator": {
+    "itemsPerPageLabel": "Items per page",
+    "lastPageLabel": "Last page",
+    "firstPageLabel": "First page",
+    "nextPageLabel": "Next page",
+    "previousPageLabel": "Previous page",
+    "rangeLabelNoPages": "0 of {{ length }}",
+    "rangeLabelPages": "{{ startIndex }} - {{ endIndex }} of {{ length }}"
   }
 }

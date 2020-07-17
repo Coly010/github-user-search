@@ -42,6 +42,12 @@ GITHUB_ACCESS_TOKEN='your token here'
 
 Vercel makes it easy to manage the environment variables that are set when deploying the project on their project settings page.
 
+## NOTES
+
+- MatPaginator supports I18N, which can be seen in the `paginator.i18n.ts` file. However, if the paginator is already rendered, and then the language is switched, the paginator i18n does not update.
+  - Because `useFactory` creates a singleton, any code that's subscribed to changes in the factory won't update the Singleton instance, just the object that was used to create the Singleton.
+  - Happy path currently would be to change language before making a search
+
 ## Development server
 
 Run `ng serve github-user-search` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.

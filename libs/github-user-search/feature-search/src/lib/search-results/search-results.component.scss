@@ -8,17 +8,6 @@ $grid-breakpoints: (
 
 @import '~bootstrap/scss/mixins/breakpoints';
 
-mat-paginator {
-  position: fixed;
-  right: 1rem;
-  background: var(--page-background);
-  @include media-breakpoint-down(md) {
-    margin-top: -46px;
-    width: 100%;
-    z-index: 10002;
-  }
-}
-
 .search-results {
   @include media-breakpoint-down(md) {
     margin-top: 182px;
