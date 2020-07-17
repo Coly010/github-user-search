@@ -12,3 +12,13 @@ export const selectSearchResults = createSelector(
   selectUserSearchFeature,
   (state: UserSearchState) => state.searchResults
 );
+
+export const selectResultsLoading = createSelector(
+  selectUserSearchFeature,
+  (state: UserSearchState) => state.resultsLoading
+);
+
+export const selectPageSize = createSelector(
+  selectUserSearchFeature,
+  (state: UserSearchState) => state.pageSize
+);

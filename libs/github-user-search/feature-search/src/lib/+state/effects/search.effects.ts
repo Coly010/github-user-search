@@ -1,17 +1,21 @@
+import { selectSearchTerm } from './../selectors/search.selectors';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Store, select } from '@ngrx/store';
 import * as fromSearch from './../actions/search.actions';
 import { filter, tap, map, mergeMap, switchMap } from 'rxjs/operators';
 import { ROUTER_NAVIGATED, RouterNavigatedAction } from '@ngrx/router-store';
 import { SearchUsersGQL } from '../graphql/search-users.graphql';
+import { from } from 'rxjs';
 
 @Injectable()
 export class SearchEffects {
   constructor(
     private readonly actions$: Actions,
     private readonly router: Router,
-    private readonly searchUsersGQL: SearchUsersGQL
+    private readonly searchUsersGQL: SearchUsersGQL,
+    private readonly store: Store
   ) {}
 
   loadSearchResults$ = createEffect(
@@ -40,11 +44,37 @@ export class SearchEffects {
             afterCursor: null,
           })
           .pipe(
-            switchMap(({ data }) => [
+            switchMap(({ data, loading }) => [
               fromSearch.search({ searchTerm }),
               fromSearch.searchResults({ searchResults: data }),
+              fromSearch.resultsLoading({ resultsLoading: loading }),
             ])
           );
+      })
+    )
+  );
+
+  updatePageSize$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromSearch.pageSize),
+      mergeMap(({ pageSize }) => {
+        return this.store.pipe(
+          select(selectSearchTerm),
+          mergeMap((searchTerm) =>
+            this.searchUsersGQL
+              .fetch({
+                searchTerm,
+                first: pageSize,
+                afterCursor: null,
+              })
+              .pipe(
+                switchMap(({ data, loading }) => [
+                  fromSearch.searchResults({ searchResults: data }),
+                  fromSearch.resultsLoading({ resultsLoading: loading }),
+                ])
+              )
+          )
+        );
       })
     )
   );

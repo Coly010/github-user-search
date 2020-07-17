@@ -7,11 +7,17 @@ export const searchFeatureKey = 'search';
 export interface UserSearchState {
   searchTerm: string;
   searchResults: SearchUsersResponse;
+  pageSize: number;
+  currentIndex: number;
+  resultsLoading: boolean;
 }
 
 export const initialState: UserSearchState = {
   searchTerm: '',
   searchResults: null,
+  pageSize: 10,
+  currentIndex: 0,
+  resultsLoading: false,
 };
 
 const searchReducer = createReducer(
@@ -20,6 +26,14 @@ const searchReducer = createReducer(
   on(fromSearch.searchResults, (state, { searchResults }) => ({
     ...state,
     searchResults,
+  })),
+  on(fromSearch.pageSize, (state, { pageSize }) => ({
+    ...state,
+    pageSize,
+  })),
+  on(fromSearch.resultsLoading, (state, { resultsLoading }) => ({
+    ...state,
+    resultsLoading,
   }))
 );
 

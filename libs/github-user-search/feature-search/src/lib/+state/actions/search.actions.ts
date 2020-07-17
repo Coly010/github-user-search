@@ -10,3 +10,13 @@ export const searchResults = createAction(
   '[Search] Load Search Results',
   props<{ searchResults: SearchUsersResponse }>()
 );
+
+export const resultsLoading = createAction(
+  '[Search] Loading Search Results',
+  props<{ resultsLoading: boolean }>()
+);
+
+export const pageSize = createAction(
+  '[Pagination] Update Page Size',
+  props<{ pageSize: number }>()
+);

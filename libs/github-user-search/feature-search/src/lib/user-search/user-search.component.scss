@@ -11,7 +11,7 @@ $grid-breakpoints: (
 .fixed-container {
   width: 98vw;
   position: fixed;
-  z-index: 10002;
+  z-index: 999;
   background: var(--page-background);
   left: 1vw;
   transform: translateY(-20px);
@@ -70,4 +70,7 @@ $grid-breakpoints: (
 
 .search-results {
   margin-top: 164px;
+  @include media-breakpoint-down(md) {
+    margin-top: 0px;
+  }
 }

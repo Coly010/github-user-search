@@ -9,9 +9,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { TranslocoModule } from '@ngneat/transloco';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreModule, ActionReducerMap } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { UserSearchComponent } from './user-search/user-search.component';
 
 import * as fromSearch from './+state/reducers/search.reducers';
@@ -44,6 +46,8 @@ const routes: Routes = [
     MatButtonModule,
     MatListModule,
     MatCardModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
     StoreModule.forFeature(fromSearch.searchFeatureKey, fromSearch.reducer),
     EffectsModule.forFeature([SearchEffects]),
   ],
