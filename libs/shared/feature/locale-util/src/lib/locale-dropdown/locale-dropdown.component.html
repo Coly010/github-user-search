@@ -1,12 +1,16 @@
 <ng-container *transloco="let t; read: 'localeDropdown'">
-  <mat-form-field appearance="outline">
-    <mat-select
-      [ngModel]="activeLang"
-      (ngModelChange)="setActiveLang($event)"
-      [attr.aria-label]="t('aria.label')"
-    >
-      <mat-option value="en">{{ t('en') }}</mat-option>
-      <mat-option value="es">{{ t('es') }}</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <button
+    class="menu-trigger"
+    mat-stroked-button
+    [matMenuTriggerFor]="menu"
+    [attr.aria-label]="t('aria.label')"
+  >
+    <mat-icon>language</mat-icon>
+    <span class="hide-mobile">{{ t(activeLang) }}</span>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="setActiveLang('en')">{{ t('en') }}</button>
+    <button mat-menu-item (click)="setActiveLang('es')">{{ t('es') }}</button>
+  </mat-menu>
 </ng-container>

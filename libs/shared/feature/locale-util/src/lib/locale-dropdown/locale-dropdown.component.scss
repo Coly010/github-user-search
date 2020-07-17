@@ -1,7 +1,30 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+@import '~bootstrap/scss/mixins/breakpoints';
 @import '~@angular/material/theming';
 
 $config: mat-typography-config();
 
 :host {
   font-size: mat-font-size($config, body-1);
+}
+
+.menu-trigger {
+  border-color: var(--page-background);
+
+  mat-icon {
+    font-weight: 300;
+  }
+}
+
+.hide-mobile {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }

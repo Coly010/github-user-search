@@ -7,6 +7,9 @@ $grid-breakpoints: (
 ) !default;
 
 @import '~bootstrap/scss/mixins/breakpoints';
+@import '~@angular/material/theming';
+
+$config: mat-typography-config();
 
 .fixed-container {
   width: 98vw;
@@ -32,6 +35,10 @@ $grid-breakpoints: (
 
       mat-icon {
         margin: 0 0.5rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: mat-font-size($config, subheading-2);
       }
     }
   }

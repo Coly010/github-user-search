@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslocoModule } from '@ngneat/transloco';
 import { LocaleDropdownComponent } from './locale-dropdown/locale-dropdown.component';
@@ -11,8 +11,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     TranslocoModule,
-    MatSelectModule,
-    MatFormFieldModule,
+    MatButtonModule,
+    MatMenuModule,
     MatIconModule,
     FormsModule,
   ],
