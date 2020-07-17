@@ -36,7 +36,10 @@
       "tags": ["type:feature"]
     },
     "shared-feature-locale-util": {
-      "tags": ["scope:shared", "type:feature"]
+      "tags": ["type:feature"]
+    },
+    "shared-util-testing-utils": {
+      "tags": []
     }
   }
 }

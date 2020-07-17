@@ -21,6 +21,6 @@ export class UserCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.isOrg = !this.user.followers;
+    this.isOrg = !(this.user as GitHubUser).followers;
   }
 }

@@ -1,5 +1,5 @@
 {
-  "appName": "Búsqueda de usuario de Github",
+  "appName": "Búsqueda de usuario de GitHub",
   "appFooter": "¡Utilizando material angular, GraphQL, NgRx y otras bibliotecas increíbles!",
   "userSearch": {
     "tagline": "Buscar usuarios en GitHub",

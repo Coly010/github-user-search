@@ -14,15 +14,15 @@
         <mat-list class="user-info" *ngIf="!isOrg">
           <mat-list-item>
             <mat-icon matListIcon>people</mat-icon>
-            {{ user.followers.totalCount }} {{ t('followers') }}
+            {{ user.followers.totalCount | number }} {{ t('followers') }}
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>star</mat-icon>
-            {{ user.starredRepositories.totalCount }} {{ t('stars') }}
+            {{ user.starredRepositories.totalCount | number }} {{ t('stars') }}
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListIcon>code</mat-icon>
-            {{ user.repositories.totalCount }} {{ t('repos') }}
+            {{ user.repositories.totalCount | number }} {{ t('repos') }}
           </mat-list-item>
         </mat-list>
       </mat-card-content>

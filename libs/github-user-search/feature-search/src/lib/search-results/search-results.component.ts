@@ -27,8 +27,6 @@ export class SearchResultsComponent implements OnInit {
   constructor(private readonly store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(fromSearch.resultsLoading({ resultsLoading: true }));
-
     this.searchResults$ = this.store.pipe(select(selectSearchResults));
     this.pageSize$ = this.store.pipe(select(selectPageSize));
     this.resultsLoading$ = this.store.pipe(select(selectResultsLoading));

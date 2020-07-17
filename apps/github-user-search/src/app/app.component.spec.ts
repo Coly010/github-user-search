@@ -1,8 +1,8 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
 import { MaterialCssVarsModule } from 'angular-material-css-vars';
-import { TestBed, async } from '@angular/core/testing';
 import { GithubUserSearchUiShellModule } from '@cfe/github-user-search/ui-shell';
+import { getTranslocoModule } from '@cfe/shared/util/testing-utils';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -13,6 +13,7 @@ describe('AppComponent', () => {
       MaterialCssVarsModule.forRoot(),
       RouterTestingModule,
       GithubUserSearchUiShellModule,
+      getTranslocoModule(),
     ],
   });
   beforeEach(() => (spectator = createComponent()));

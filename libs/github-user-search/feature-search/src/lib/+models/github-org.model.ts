@@ -5,4 +5,7 @@ export interface GithubOrg {
   description: string;
   url: string;
   avatarUrl: string;
+  repositories: {
+    totalCount: number;
+  };
 }

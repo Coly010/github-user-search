@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { MaterialCssVarsModule } from 'angular-material-css-vars';
@@ -29,13 +28,7 @@ import { GraphQLModule } from './graphql.module';
     }),
     GithubUserSearchUiShellModule,
     AppRoutingModule,
-    StoreModule.forRoot(
-      {
-        router: routerReducer,
-      },
-      { metaReducers }
-    ),
-    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot({}, { metaReducers }),
     EffectsModule.forRoot(),
     GraphQLModule,
   ],

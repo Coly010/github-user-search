@@ -82,6 +82,9 @@ export class SearchUsersGQL extends Query<SearchUsersResponse> {
               description
               url
               avatarUrl
+              repositories {
+                totalCount
+              }
             }
           }
         }

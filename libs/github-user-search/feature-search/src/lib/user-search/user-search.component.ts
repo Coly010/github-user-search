@@ -2,11 +2,10 @@ import { selectSearchTerm } from './../+state/selectors/search.selectors';
 import { search } from './../+state/actions/search.actions';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store, select } from '@ngrx/store';
 import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
-@UntilDestroy()
 @Component({
   selector: 'cfe-user-search',
   templateUrl: './user-search.component.html',
@@ -15,6 +14,7 @@ import { tap } from 'rxjs/operators';
 })
 export class UserSearchComponent implements OnInit {
   searchForm: FormGroup;
+  formSubmitted = false;
 
   constructor(private readonly store: Store) {}
 
@@ -23,9 +23,10 @@ export class UserSearchComponent implements OnInit {
       searchTerm: new FormControl('', Validators.required),
     });
 
-    this.store
-      .pipe(untilDestroyed(this), select(selectSearchTerm))
-      .subscribe((searchTerm) => this.searchForm.setValue({ searchTerm }));
+    this.store.pipe(select(selectSearchTerm)).subscribe((searchTerm) => {
+      this.searchForm.setValue({ searchTerm });
+      this.formSubmitted = searchTerm !== '';
+    });
   }
 
   search() {

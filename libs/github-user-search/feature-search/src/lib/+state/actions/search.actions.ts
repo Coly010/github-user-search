@@ -6,6 +6,8 @@ export const search = createAction(
   props<{ searchTerm: string }>()
 );
 
+export const fetchSearchResults = createAction('[Search] Fetch Search Results');
+
 export const searchResults = createAction(
   '[Search] Load Search Results',
   props<{ searchResults: SearchUsersResponse }>()

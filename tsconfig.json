@@ -25,6 +25,9 @@
       ],
       "@cfe/shared/feature/locale-util": [
         "libs/shared/feature/locale-util/src/index.ts"
+      ],
+      "@cfe/shared/util/testing-utils": [
+        "libs/shared/util/testing-utils/src/index.ts"
       ]
     }
   },

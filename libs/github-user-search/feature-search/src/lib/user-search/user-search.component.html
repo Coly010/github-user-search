@@ -33,6 +33,6 @@
     </div>
   </div>
   <div class="search-results">
-    <router-outlet></router-outlet>
+    <cfe-search-results *ngIf="formSubmitted"></cfe-search-results>
   </div>
 </ng-container>

@@ -50,7 +50,6 @@
     "@ngneat/transloco-optimize": "^1.0.1",
     "@ngneat/until-destroy": "^7.3.2",
     "@ngrx/effects": "^9.2.0",
-    "@ngrx/router-store": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "@nrwl/angular": "9.5.1",
     "angular-material-css-vars": "^1.0.0",

@@ -1,17 +1,14 @@
-import {
-  selectSearchTerm,
-  selectPageSize,
-  selectSearchResultsAndPageInfo,
-} from './../selectors/search.selectors';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store, select } from '@ngrx/store';
-import * as fromSearch from './../actions/search.actions';
-import { filter, tap, map, mergeMap, switchMap, take } from 'rxjs/operators';
-import { ROUTER_NAVIGATED, RouterNavigatedAction } from '@ngrx/router-store';
+import { tap, mergeMap, switchMap, take } from 'rxjs/operators';
 import { SearchUsersGQL } from '../graphql/search-users.graphql';
-import { from } from 'rxjs';
+import {
+  selectSearchTerm,
+  selectSearchResultsAndPageInfo,
+} from './../selectors/search.selectors';
+import * as fromSearch from './../actions/search.actions';
 
 @Injectable()
 export class SearchEffects {
@@ -22,25 +19,20 @@ export class SearchEffects {
     private readonly store: Store
   ) {}
 
-  loadSearchResults$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(fromSearch.search),
-        tap(({ searchTerm }) => {
-          this.router.navigateByUrl(`/search/${searchTerm}`);
-        })
-      ),
-    { dispatch: false }
+  loadSearchResults$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromSearch.search),
+      switchMap(() => [
+        fromSearch.resultsLoading({ resultsLoading: true }),
+        fromSearch.fetchSearchResults(),
+      ])
+    )
   );
 
   fetchSearchResults$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ROUTER_NAVIGATED),
-      map(({ payload }: RouterNavigatedAction) => {
-        const url = payload.event.url;
-        return url.includes('/search/') ? url.split('/search/')[1] : '';
-      }),
-      filter((searchTerm) => searchTerm !== ''),
+      ofType(fromSearch.fetchSearchResults),
+      mergeMap(() => this.store.pipe(select(selectSearchTerm), take(1))),
       mergeMap((searchTerm) => {
         return this.searchUsersGQL
           .fetch({
@@ -50,7 +42,6 @@ export class SearchEffects {
           })
           .pipe(
             switchMap(({ data, loading }) => [
-              fromSearch.search({ searchTerm }),
               fromSearch.searchResults({ searchResults: data }),
               fromSearch.resultsLoading({ resultsLoading: loading }),
             ])

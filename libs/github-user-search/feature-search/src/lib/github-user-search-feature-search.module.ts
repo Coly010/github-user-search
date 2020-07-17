@@ -1,6 +1,5 @@
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { Routes, RouterModule } from '@angular/router';
-import { NgModule, InjectionToken } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,12 +24,6 @@ const routes: Routes = [
   {
     path: '',
     component: UserSearchComponent,
-    children: [
-      {
-        path: 'search/:searchTerm',
-        component: SearchResultsComponent,
-      },
-    ],
   },
 ];
 
