@@ -36,7 +36,6 @@ export class SearchResultsComponent implements OnInit {
   }
 
   updatePage({ pageSize, pageIndex, previousPageIndex }: PageEvent) {
-    console.log(`update Page`, pageSize, pageIndex, previousPageIndex);
     if (pageIndex !== previousPageIndex) {
       const direction = pageIndex > previousPageIndex ? 'next' : 'prev';
       this.store.dispatch(fromSearch.pageChanged({ direction }));
