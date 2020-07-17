@@ -24,11 +24,7 @@ export class UserSearchComponent implements OnInit {
     });
 
     this.store
-      .pipe(
-        untilDestroyed(this),
-        select(selectSearchTerm),
-        tap((v) => console.log(`value set`, v))
-      )
+      .pipe(untilDestroyed(this), select(selectSearchTerm))
       .subscribe((searchTerm) => this.searchForm.setValue({ searchTerm }));
   }
 

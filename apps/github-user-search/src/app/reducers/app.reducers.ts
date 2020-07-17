@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   if (environment.production) {
-    return () => null;
+    return (state, action) => reducer(state, action);
   }
 
   return function (state, action) {
