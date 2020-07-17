@@ -22,6 +22,9 @@
       ],
       "@cfe/github-user-search/feature-search": [
         "libs/github-user-search/feature-search/src/index.ts"
+      ],
+      "@cfe/shared/feature/locale-util": [
+        "libs/shared/feature/locale-util/src/index.ts"
       ]
     }
   },

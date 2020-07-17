@@ -13,5 +13,9 @@
     "followers": "Followers",
     "stars": "Stars",
     "repos": "Repositories"
+  },
+  "localeDropdown": {
+    "en": "English",
+    "es": "Español"
   }
 }

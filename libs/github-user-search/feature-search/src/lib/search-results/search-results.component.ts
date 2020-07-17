@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
@@ -16,6 +16,7 @@ import * as fromSearch from '../+state/actions/search.actions';
   selector: 'cfe-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchResultsComponent implements OnInit {
   searchResults$: Observable<SearchUsersResponse>;
@@ -26,6 +27,8 @@ export class SearchResultsComponent implements OnInit {
   constructor(private readonly store: Store) {}
 
   ngOnInit(): void {
+    this.store.dispatch(fromSearch.resultsLoading({ resultsLoading: true }));
+
     this.searchResults$ = this.store.pipe(select(selectSearchResults));
     this.pageSize$ = this.store.pipe(select(selectPageSize));
     this.resultsLoading$ = this.store.pipe(select(selectResultsLoading));

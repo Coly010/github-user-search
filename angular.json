@@ -199,6 +199,41 @@
           "style": "scss"
         }
       }
+    },
+    "shared-feature-locale-util": {
+      "projectType": "library",
+      "root": "libs/shared/feature/locale-util",
+      "sourceRoot": "libs/shared/feature/locale-util/src",
+      "prefix": "cfe",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/feature/locale-util/tsconfig.lib.json",
+              "libs/shared/feature/locale-util/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/feature/locale-util/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/feature/locale-util/jest.config.js",
+            "tsConfig": "libs/shared/feature/locale-util/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/feature/locale-util/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

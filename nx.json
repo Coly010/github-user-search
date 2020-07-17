@@ -34,6 +34,9 @@
     },
     "github-user-search-feature-search": {
       "tags": ["type:feature"]
+    },
+    "shared-feature-locale-util": {
+      "tags": ["scope:shared", "type:feature"]
     }
   }
 }

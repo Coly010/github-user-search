@@ -1,0 +1,8 @@
+<ng-container *transloco="let t; read: 'localeDropdown'">
+  <mat-form-field appearance="outline" color="accent">
+    <mat-select [ngModel]="activeLang" (ngModelChange)="setActiveLang($event)">
+      <mat-option value="en">{{ t('en') }}</mat-option>
+      <mat-option value="es">{{ t('es') }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-container>

@@ -1,1 +1,21 @@
-{}
+{
+  "appName": "Búsqueda de usuario de Github",
+  "appFooter": "¡Utilizando material angular, GraphQL, NgRx y otras bibliotecas increíbles!",
+  "userSearch": {
+    "tagline": "Buscar usuarios en GitHub",
+    "form": {
+      "searchLabel": "Buscar usuarios de GitHub",
+      "searchBtn": "Buscar",
+      "required": "Debes ingresar un término para buscar"
+    }
+  },
+  "userCard": {
+    "followers": "Seguidores",
+    "stars": "Estrellas",
+    "repos": "Repositorios"
+  },
+  "localeDropdown": {
+    "en": "English",
+    "es": "Español"
+  }
+}
