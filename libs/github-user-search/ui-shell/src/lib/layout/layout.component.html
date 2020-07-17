@@ -1,9 +1,10 @@
 <ng-container *transloco="let t">
   <div class="page">
-    <mat-toolbar color="primary" role="heading">
+    <mat-toolbar class="header-bar" color="primary">
       <mat-toolbar-row>
         {{ t('appName') }}
         <div class="spacer"></div>
+        <cfe-locale-dropdown></cfe-locale-dropdown>
       </mat-toolbar-row>
     </mat-toolbar>
 
@@ -16,7 +17,6 @@
       <mat-toolbar>
         <mat-toolbar-row>
           <p>{{ t('appFooter') }}</p>
-          <cfe-locale-dropdown></cfe-locale-dropdown>
         </mat-toolbar-row>
       </mat-toolbar>
     </div>
