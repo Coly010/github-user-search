@@ -16,9 +16,9 @@ Deployed at [https://github-user-search.vercel.app/](https://github-user-search.
   - Cypress e2e testing out of the box
   - Jest unit testing out of the box
   - Prettier config for consistent code style across the team
+- GraphQL with [Apollo](https://www.apollographql.com/docs/angular/) for powerful API calls!
 - [Angular Material](https://material.angular.io) used for UI Library
-  - Not only does it provide pre-created components matching Material Design
-  - It also provides some a11y benefits
+  - Not only does it provide pre-created components matching Material Design, it also provides some a11y benefits
 - [NgRx](https://ngrx.io/) is used as the state management solution
 - [Transloco](https://ngneat.github.io/transloco/) used as the I18n solution
   - Languages supported are English and Spanish (NOTE: the Spanish translations will be far from accurate)
@@ -41,12 +41,6 @@ GITHUB_ACCESS_TOKEN='your token here'
 ```
 
 Vercel makes it easy to manage the environment variables that are set when deploying the project on their project settings page.
-
-## NOTES
-
-- MatPaginator supports I18N, which can be seen in the `paginator.i18n.ts` file. However, if the paginator is already rendered, and then the language is switched, the paginator i18n does not update.
-  - Because `useFactory` creates a singleton, any code that's subscribed to changes in the factory won't update the Singleton instance, just the object that was used to create the Singleton.
-  - Happy path currently would be to change language before making a search
 
 ## Development server
 
