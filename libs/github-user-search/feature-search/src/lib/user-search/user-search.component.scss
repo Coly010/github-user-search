@@ -4,11 +4,11 @@
 $config: mat-typography-config();
 
 .fixed-container {
-  width: 98vw;
   position: fixed;
   z-index: 999;
   background: var(--page-background);
-  left: 1vw;
+  left: 1rem;
+  right: 1rem;
   transform: translateY(-20px);
   padding-bottom: 4px;
 }
