@@ -55,12 +55,15 @@ export class UserSearchComponent implements OnInit {
     this.store.dispatch(search({ searchTerm }));
   }
 
-  updatePage({ pageSize, pageIndex, previousPageIndex }: PageEvent) {
-    if (pageIndex !== previousPageIndex) {
+  updatePage(
+    { pageSize, pageIndex, previousPageIndex }: PageEvent,
+    prevPageSize: number
+  ) {
+    if (pageSize !== prevPageSize) {
+      this.store.dispatch(fromSearch.pageSize({ pageSize }));
+    } else if (pageIndex !== previousPageIndex) {
       const direction = pageIndex > previousPageIndex ? 'next' : 'prev';
       this.store.dispatch(fromSearch.pageChanged({ direction }));
-    } else {
-      this.store.dispatch(fromSearch.pageSize({ pageSize }));
     }
     this.store.dispatch(fromSearch.resultsLoading({ resultsLoading: true }));
   }

@@ -56,6 +56,7 @@ export class SearchEffects {
       mergeMap(({ pageSize }) =>
         this.store.pipe(
           select(selectSearchTerm),
+          tap(() => console.log('pageSize', pageSize)),
           mergeMap((searchTerm) =>
             this.searchUsersGQL
               .fetch({
