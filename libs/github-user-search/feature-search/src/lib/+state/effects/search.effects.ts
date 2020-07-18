@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store, select } from '@ngrx/store';
 import { tap, mergeMap, switchMap, take } from 'rxjs/operators';
@@ -14,7 +13,6 @@ import * as fromSearch from './../actions/search.actions';
 export class SearchEffects {
   constructor(
     private readonly actions$: Actions,
-    private readonly router: Router,
     private readonly searchUsersGQL: SearchUsersGQL,
     private readonly store: Store
   ) {}
@@ -56,7 +54,6 @@ export class SearchEffects {
       mergeMap(({ pageSize }) =>
         this.store.pipe(
           select(selectSearchTerm),
-          tap(() => console.log('pageSize', pageSize)),
           mergeMap((searchTerm) =>
             this.searchUsersGQL
               .fetch({

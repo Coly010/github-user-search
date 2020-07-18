@@ -1,0 +1,41 @@
+{
+  "data": {
+    "search": {
+      "userCount": 1,
+      "pageInfo": {
+        "startCursor": "Y3Vyc29yOjE=",
+        "hasNextPage": false,
+        "endCursor": "Y3Vyc29yOjE=",
+        "__typename": "PageInfo"
+      },
+      "edges": [
+        {
+          "node": {
+            "id": "MDQ6VXNlcjEyMTQwNDY3",
+            "login": "Coly010",
+            "name": "Colum Ferry",
+            "url": "https://github.com/Coly010",
+            "email": "",
+            "bio": "",
+            "avatarUrl": "https://avatars1.githubusercontent.com/u/12140467?u=a0c5bc5ddf6cb65863ae359b1c231c7ad7b311fb&v=4",
+            "followers": {
+              "totalCount": 6,
+              "__typename": "FollowerConnection"
+            },
+            "repositories": {
+              "totalCount": 22,
+              "__typename": "RepositoryConnection"
+            },
+            "starredRepositories": {
+              "totalCount": 11,
+              "__typename": "StarredRepositoryConnection"
+            },
+            "__typename": "User"
+          },
+          "__typename": "SearchResultItemEdge"
+        }
+      ],
+      "__typename": "SearchResultItemConnection"
+    }
+  }
+}

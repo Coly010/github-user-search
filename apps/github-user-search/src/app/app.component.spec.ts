@@ -1,6 +1,5 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
-import { MaterialCssVarsModule } from 'angular-material-css-vars';
 import { GithubUserSearchUiShellModule } from '@cfe/github-user-search/ui-shell';
 import { getTranslocoModule } from '@cfe/shared/util/testing-utils';
 import { AppComponent } from './app.component';
@@ -10,11 +9,11 @@ describe('AppComponent', () => {
   const createComponent = createComponentFactory({
     component: AppComponent,
     imports: [
-      MaterialCssVarsModule.forRoot(),
       RouterTestingModule,
       GithubUserSearchUiShellModule,
       getTranslocoModule(),
     ],
+    shallow: true,
   });
   beforeEach(() => (spectator = createComponent()));
 

@@ -1,14 +1,13 @@
 import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { getTranslocoModule } from '@cfe/shared/util/testing-utils';
 import { SearchResultsComponent } from './search-results.component';
-import { provideMockStore } from '@ngrx/store/testing';
 
 describe('SearchResultsComponent', () => {
   let spectator: Spectator<SearchResultsComponent>;
   const createComponent = createComponentFactory({
     component: SearchResultsComponent,
-    imports: [provideMockStore()],
+    imports: [getTranslocoModule()],
     shallow: true,
   });
 

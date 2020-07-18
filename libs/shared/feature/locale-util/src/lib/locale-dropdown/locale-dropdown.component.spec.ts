@@ -2,12 +2,13 @@ import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
 
 import { getTranslocoModule } from '@cfe/shared/util/testing-utils';
 import { LocaleDropdownComponent } from './locale-dropdown.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 describe('LocaleDropdownComponent', () => {
   let spectator: Spectator<LocaleDropdownComponent>;
   const createComponent = createComponentFactory({
     component: LocaleDropdownComponent,
-    imports: [getTranslocoModule()],
+    imports: [MatMenuModule, getTranslocoModule()],
     shallow: true,
   });
 
