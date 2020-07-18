@@ -1,6 +1,6 @@
 <ng-container *transloco="let t; read: 'localeDropdown'">
   <button
-    class="menu-trigger"
+    class="locale-change menu-trigger"
     mat-stroked-button
     [matMenuTriggerFor]="menu"
     [attr.aria-label]="t('aria.label')"
@@ -10,7 +10,11 @@
     <mat-icon>arrow_drop_down</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="setActiveLang('en')">{{ t('en') }}</button>
-    <button mat-menu-item (click)="setActiveLang('es')">{{ t('es') }}</button>
+    <button mat-menu-item class="menu-item" (click)="setActiveLang('en')">
+      {{ t('en') }}
+    </button>
+    <button mat-menu-item class="menu-item" (click)="setActiveLang('es')">
+      {{ t('es') }}
+    </button>
   </mat-menu>
 </ng-container>

@@ -16,7 +16,7 @@
               formControlName="searchTerm"
               class="search__input"
             />
-            <mat-error *ngIf="searchForm.invalid">{{
+            <mat-error class="search__error" *ngIf="searchForm.invalid">{{
               t('form.required')
             }}</mat-error>
           </mat-form-field>
@@ -24,6 +24,7 @@
             mat-flat-button
             color="accent"
             type="submit"
+            class="search__button"
             [disabled]="searchForm.invalid"
           >
             {{ t('form.searchBtn') }}
@@ -42,6 +43,7 @@
     ></mat-progress-bar>
 
     <mat-paginator
+      class="paginator"
       [length]="(searchResults$ | async)?.search.userCount"
       [pageSize]="pageSize$ | async"
       [pageSizeOptions]="pageSizeOptions"
