@@ -40,6 +40,9 @@
     },
     "shared-util-testing-utils": {
       "tags": []
+    },
+    "github-user-search-ui-theme": {
+      "tags": ["type:ui"]
     }
   }
 }

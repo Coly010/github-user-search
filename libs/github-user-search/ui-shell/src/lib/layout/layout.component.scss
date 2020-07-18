@@ -1,12 +1,4 @@
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
-
-@import '~bootstrap/scss/mixins/breakpoints';
+@import 'libs/github-user-search/ui-theme/scss/mixins/breakpoints';
 @import '~@angular/material/theming';
 
 $config: mat-typography-config();

@@ -1,19 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~angular-material-css-vars/main';
-
-$mat-css-dark-theme-selector: '.isDarkTheme';
-$mat-css-light-theme-selector: '.isLightTheme';
-
 :root {
   --page-background: #fafafa;
 }
-
-.isDarkTheme {
-  --page-background: #313131;
-}
-
-// init theme
-@include init-material-css-vars();
 
 html,
 body {

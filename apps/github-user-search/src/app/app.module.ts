@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { MaterialCssVarsModule } from 'angular-material-css-vars';
 
 import { GithubUserSearchUiShellModule } from '@cfe/github-user-search/ui-shell';
 
@@ -21,11 +20,6 @@ import { GraphQLModule } from './graphql.module';
     HttpClientModule,
     TranslocoRootModule,
     BrowserAnimationsModule,
-    MaterialCssVarsModule.forRoot({
-      isAutoContrast: true,
-      darkThemeClass: 'isDarkTheme',
-      lightThemeClass: 'isLightTheme',
-    }),
     GithubUserSearchUiShellModule,
     AppRoutingModule,
     StoreModule.forRoot({}, { metaReducers }),

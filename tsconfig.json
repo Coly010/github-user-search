@@ -28,6 +28,9 @@
       ],
       "@cfe/shared/util/testing-utils": [
         "libs/shared/util/testing-utils/src/index.ts"
+      ],
+      "@cfe/github-user-search/ui-theme": [
+        "libs/github-user-search/ui-theme/src/index.ts"
       ]
     }
   },
